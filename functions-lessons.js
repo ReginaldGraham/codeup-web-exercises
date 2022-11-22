@@ -12,7 +12,17 @@ sayHello()
 function sayHello(name) {
     return ('hello ' + name);
 }
-} console.log(sayHello('joe'));
+ console.log(sayHello('joe'));
+function sayHello(name){
+    let message = `Hello, `+ name + ` !`;
+    return message;
+}
+console.log(sayHello(`Codeup`));
+const sayHello=(name)=>{
+    let message =`Hello ${name} !`;
+    return message ;
+}
+console.log(sayHello(`Codeup`))
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -25,6 +35,9 @@ console.log(sayHello("Reggie Graham"));
 let helloMessage = sayHello("Reggie Graham");
 
 console.log(helloMessage);
+
+let helloMessage=sayHello(`Reginald`)
+console.log(helloMessage)
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -33,6 +46,8 @@ console.log(helloMessage);
  */
 let myName = ('Reggie Graham');
 console.log(sayHello(myName));
+let myName=`Reggie`;
+console.log(sayHello(myName))
 
 
 
@@ -57,6 +72,13 @@ console.log(sayHello(myName));
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo(number){
+    let answer=number==2;
+    return answer;
+}
+let isTwoAnswer=isTwo(random);
+console.log(isTwoAnswer)
+console.log(random)
  function isTwo(x) {
      return x === 2;
  }
@@ -80,6 +102,14 @@ console.log(sayHello(myName));
 
 
  console.log(calculateTip(10))
+let tipAnswer=calculateTip(200,20);
+console.log(tipAnswer);
+function calculateTip(total, tip) {
+    let tipFormatted = tip / 100;
+     tipFormatted= parseFloat(tipFormatted);
+    let answer= total * tipFormatted;
+    return answer;
+}
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -92,7 +122,9 @@ console.log(sayHello(myName));
      let tipPercent =prompt( 'what tip percent would you like to pay');
      let total =tab * tipPercent ;
      alert('you owe for the tip '+ total) }
-
+let bill=prompt('what is the bill total')
+let tip=prompt('how much for the tip')
+alert(calculateTip(bill,tip))
 
 /**
  * TODO:
@@ -108,7 +140,15 @@ console.log(sayHello(myName));
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-
+var oringinalPrice=100;
+var discountPercent= 20;
+let appliedDiscount=applyDiscount(oringinalPrice,discountPercent);
+console.log(appliedDiscount);
+function applyDiscount(price,discount){
+    let discountFormatted = discount / 100;
+    let result= (1- discountFormatted) * price;
+    return result.toFixed(2);
+}
 
  function applyDiscount(price, discountPercent) {
      return price - price * discountPercent;
