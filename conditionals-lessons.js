@@ -53,20 +53,20 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzeColor(input) {
-    switch (input) {
-        case`red`:
-            return('red is my favorite color');
-            break;
-        case `blue`:
-            return(`blue is the color  of the ocean `);
-            break;
-        default:
-            return(`I don't know anything about ` + input)
-    }
-}
-
-console.log(analyzeColor(`purple`))
+// function analyzeColor(input) {
+//     switch (input) {
+//         case`red`:
+//             return('red is my favorite color');
+//             break;
+//         case `blue`:
+//             return(`blue is the color  of the ocean `);
+//             break;
+//         default:
+//             return(`I don't know anything about ` + input)
+//     }
+// }
+//
+// console.log(analyzeColor(`purple`))
 
 /**
  * TODO:
@@ -74,9 +74,9 @@ console.log(analyzeColor(`purple`))
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-// let analyzeColor=prompt(`whats your favorite color`)
-// return
-/* ########################################################################## */
+//  let colorChoice=prompt(`whats your favorite color`)
+// alert(analyzeColor(colorChoice))
+
 
 /**
  * TODO:
@@ -97,6 +97,30 @@ console.log(analyzeColor(`purple`))
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(discount,price){
+    if(discount===0) {
+        return price;
+    }
+    else if(discount===1){
+        return price*.9;
+    }
+    else if(discount===2){
+        return price*.75;
+    }
+    else if(discount===3){
+        return price*.65;
+    }
+    else if(discount===4){
+        return price*.5;
+    }
+    else if(discount===5){
+        return 'its free'
+    }
+    else{
+        return price;
+    }
+}
+console.log(calculateTotal(2,100))
 
 /**
  * TODO:
@@ -107,7 +131,12 @@ console.log(analyzeColor(`purple`))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+ var luckyNumber = Math.floor(Math.random() * 6);
+ let bill=prompt('how much is the bill')
+alert(`your bill was `+ bill)
+alert(`your lucky number was ` + luckyNumber)
+alert(`your final total is ` + calculateTotal(luckyNumber,bill))
+
 
 /**
  * TODO:
