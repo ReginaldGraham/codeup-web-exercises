@@ -18,11 +18,11 @@ function sayHello(name){
     return message;
 }
 console.log(sayHello(`Codeup`));
-const sayHello=(name)=>{
-    let message =`Hello ${name} !`;
-    return message ;
-}
-console.log(sayHello(`Codeup`))
+// const sayHello=(name)=>{
+//     let message =`Hello ${name} !`;
+//     return message ;
+// }
+// console.log(sayHello(`Codeup`))
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
