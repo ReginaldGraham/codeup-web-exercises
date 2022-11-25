@@ -97,30 +97,30 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-function calculateTotal(discount,price){
-    if(discount===0) {
-        return price;
-    }
-    else if(discount===1){
-        return price*.9;
-    }
-    else if(discount===2){
-        return price*.75;
-    }
-    else if(discount===3){
-        return price*.65;
-    }
-    else if(discount===4){
-        return price*.5;
-    }
-    else if(discount===5){
-        return 'its free'
-    }
-    else{
-        return price;
-    }
-}
-console.log(calculateTotal(2,100))
+// function calculateTotal(discount,price){
+//     if(discount===0) {
+//         return price;
+//     }
+//     else if(discount===1){
+//         return price*.9;
+//     }
+//     else if(discount===2){
+//         return price*.75;
+//     }
+//     else if(discount===3){
+//         return price*.65;
+//     }
+//     else if(discount===4){
+//         return price*.5;
+//     }
+//     else if(discount===5){
+//         return 'its free'
+//     }
+//     else{
+//         return price;
+//     }
+// }
+// console.log(calculateTotal(2,100))
 
 /**
  * TODO:
@@ -131,11 +131,11 @@ console.log(calculateTotal(2,100))
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
- var luckyNumber = Math.floor(Math.random() * 6);
- let bill=prompt('how much is the bill')
-alert(`your bill was `+ bill)
-alert(`your lucky number was ` + luckyNumber)
-alert(`your final total is ` + calculateTotal(luckyNumber,bill))
+//  var luckyNumber = Math.floor(Math.random() * 6);
+//  let bill=prompt('how much is the bill')
+// alert(`your bill was `+ bill)
+// alert(`your lucky number was ` + luckyNumber)
+// alert(`your final total is ` + calculateTotal(luckyNumber,bill))
 
 
 /**
@@ -156,3 +156,6 @@ alert(`your final total is ` + calculateTotal(luckyNumber,bill))
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+let allow=confirm('would you like to enter a number ') && prompt('what number do you want')
+    && alert(if(allow<0){ `is negative`} else{`is positive` })
+
