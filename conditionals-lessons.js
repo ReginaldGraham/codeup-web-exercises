@@ -156,6 +156,25 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-let allow=confirm('would you like to enter a number ') && prompt('what number do you want')
-    && alert(if(allow<0){ `is negative`} else{`is positive` })
+ let pick=confirm('would you like to enter a number ');
+if (pick){let allow=prompt('what number do you want');
+
+let info= allow*1
+if (info % 2!==0 && info>0){
+    alert(`number is odd`); alert(`number is positive`);alert(`your number plus 100= `+(allow *1 +100));
+}
+else if(info %2===0 && info>0){
+    alert(`number is even`); alert(`number is positive`);alert(`your number plus 100= `+(allow *1 +100));
+}
+else if(info %2!==0 && info<0){
+    alert(`number is odd`); alert(`number is negative`);alert(`your number plus 100= `+(allow *1 +100));
+}
+else if(info %2===0 && info<0){
+    alert(`number is even`); alert(`number is negative`); alert(`your number plus 100= `+(allow *1 +100));
+}
+else {
+    alert('not a number')
+}}
+
+
 
