@@ -178,12 +178,34 @@
 // }
 // console.log(remainder(7,3))
 // Write a function named cube(n) that returns n * n * n
-function cube(x){
-    return x*x*x
-}
-console.log(cube(3))
+// function cube(x){
+//     return x*x*x
+// }
+// console.log(cube(3))
 // Write a function named squareRoot(n) that returns the square root of the input
+function squareRoot(number) {
+    var number;
+    for (var i = number; i >= 1; i--) {
+        if (i * i === number) {
+            number = i;
+            break;
+        }
+    }
+    return number;
+}
+console.log(squareRoot(9))
 // Write a function named cubeRoot(n) that returns the cube root of the input
+function cubeRoot(number) {
+    var number;
+    for (var i = number; i >= 1; i--) {
+        if (i * i * i === number) {
+            number = i;
+            break;
+        }
+    }
+    return number;
+}
+console.log(cubeRoot(64))
 // Write a function named invertSign(number) that returns a negative version of a postive number, a
 // positve version of negative, and false for all else.
 // Write a function named degreesToRadians(number)
