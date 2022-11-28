@@ -157,7 +157,8 @@ let randomColor = colors[Math.floor(Math.random() * colors.length)];
  * HINT: The way we prompt for a value could be improved
  */
  let pick=confirm('would you like to enter a number ');
-if (pick){let allow=prompt('what number do you want');
+if (pick){
+    let allow=prompt('what number do you want');
 
 let info= allow*1
 if (info % 2!==0 && info>0){
