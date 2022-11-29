@@ -208,8 +208,16 @@ function cubeRoot(number) {
 console.log(cubeRoot(64))
 // Write a function named invertSign(number) that returns a negative version of a postive number, a
 // positve version of negative, and false for all else.
+function invertSign(number){
+    return number * -1
+}
+console.log(invertSign(-2))
 // Write a function named degreesToRadians(number)
+function degreeToRadians(input){
+    return input*3.14/180
+}
 // Write a function named radiansToDegrees(number)
+
 // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
 //     Make a function named trim(string) that removes empty spaces before and after the input.
 //     Make a function named areEqual(input1, input2) that returns if both inputs have the same value
@@ -222,3 +230,73 @@ console.log(cubeRoot(64))
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
 //     Make a function named rollDice(sides) that takes in an argument containing the number of sides
 // the die should have. Generate a random number between 1 up to and including the number of sides.
+
+// 1) Make a function called returnTwo() that returns the number 2 when called
+// ---Test this function with console.log(returnTwo())
+
+function returnTwo(){
+    return 2
+}
+console.log(returnTwo())
+
+// 2) Make a function called returnName() that returns the string of your name
+// ---Test this function with console.log(returnName())
+function returnName(input){
+    return input;
+}
+console.log(returnName(`reginald`))
+
+
+// 3) Make a function called addThree() which takes in a number input and returns the number plus 3.
+// ---Test this function with console.log(addThree(5))
+function addThree(number){
+    return number+3
+}
+console.log(addThree(5))
+
+// 4) Make a function called sayString() which returns the string input passed in.
+// ---Test this function with console.log(sayString())
+function sayString(string){
+    return string.toString()
+}
+console.log(sayString(`t`))
+
+
+
+// 5) Make a function called sayHowdy() which console.logs the string "Howdy!"
+// ---Test this function by directly calling sayHowdy()
+// ---Remember this function does not need a defined return value
+
+function sayHowdy(){
+    return `Howdy!`
+}
+console.log(sayHowdy())
+
+// write a function, abbrevToDay, that takes in a three-character abbreviation for the day of the week and returns the complete day of the week
+// Example: abbrevToDay('mon') returns 'Monday'
+
+function abbrevToDay(input){
+    let prop=input.toLowerCase()
+    if (prop==`mon`){
+        return `Monday`;
+    }
+    else if (prop==`tue`){
+        return `Tuesday`;
+    }
+    else if (prop==`wed`){
+        return `Wednesday`;
+    }
+    else if (prop==`thr`){
+        return `Thursday`;
+    }
+    else if (prop==`fri`){
+        return `Friday`;
+
+    }
+    else{
+        return `Not a day`
+    }
+    return input
+}
+
+console.log(abbrevToDay(`Fri`))
