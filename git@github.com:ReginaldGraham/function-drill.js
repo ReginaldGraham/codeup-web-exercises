@@ -216,20 +216,6 @@ console.log(invertSign(-2))
 function degreeToRadians(input){
     return input*3.14/180
 }
-// Write a function named radiansToDegrees(number)
-
-// Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
-//     Make a function named trim(string) that removes empty spaces before and after the input.
-//     Make a function named areEqual(input1, input2) that returns if both inputs have the same value
-// Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
-//     Make a function named not(input) returns the input with a flipped boolean
-// Make a function named notNot(input) that the negation of the negation of the input.
-//     Make a function named and(predicate1, predicate2) that returns the logical operation of AND
-// Make a function named or(predicate1, predicate2) that returns the logical operation of OR
-// Write a function called reverseString(string) that reverses a string
-// Make a function named absoluteValue(number) that returns the absolute value of a number.
-//     Make a function named rollDice(sides) that takes in an argument containing the number of sides
-// the die should have. Generate a random number between 1 up to and including the number of sides.
 
 // 1) Make a function called returnTwo() that returns the number 2 when called
 // ---Test this function with console.log(returnTwo())
