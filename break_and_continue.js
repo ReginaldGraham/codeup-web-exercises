@@ -1,13 +1,4 @@
-// for(let i = 1; i < 50; i++) {
-// if(i % 2===0){
-//     if (i !==27) {
-//         // console.log(`skipping this number`+i)
-//         // break;}
-//         // continue;
-//         // continue
-//     }}
-//     console.log(i)
-// }
+
 // while(true){
 //     let userNum= prompt("Enter an odd number between 1 and 50");
 //     userNum=parseFloat(userNum);

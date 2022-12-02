@@ -13,18 +13,18 @@
 
 // Use a for loop and the code from the previous lessons to generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even. For example:
 //     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-    // function generate() {
-    //     for(let i = 0; i < 10; i++) {
-    //         let formula = Math.random() * (200 - 20) + 20;
-    //         let round=Math.round(formula);
-    //         if(round % 2===0){
-    //              console.log(`${round} is even`);
-    //         }
-    //         else {  console.log(`${round} is odd`);
-    //         }
-    //     }
-    //
-    //     }
+//     function generate() {
+//         for(let i = 0; i < 10; i++) {
+//             let formula = Math.random() * (200 - 20) + 20;
+//             let round=Math.round(formula);
+//             if(round % 2===0){
+//                  console.log(`${round} is even`);
+//             }
+//             else {  console.log(`${round} is odd`);
+//             }
+//         }
+//
+//         }
 //     console.log(generate())
 // Create a for loop that uses console.log to create the output shown below.
 //     for(let i = 0; i < 10; i++){
