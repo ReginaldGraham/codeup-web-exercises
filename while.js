@@ -11,17 +11,22 @@ function iceCream() {
 
     do {
         let purchase = Math.round(Math.random() * (5 - 1) + 1);
-    console.log(purchase);
-        let newStock =(i - purchase);
-         i = newStock;
-        console.log(`${i} this is i after newStock -purchase`);
-    // };
-
-
-    // console.log(i);
-    // console.log(purchase);
-
-} while (i>1);
+        console.log(`this is ${purchase}`);
+        let newStock = (i - purchase);
+        i = newStock;
+        // console.log(`${i} this is i after newStock -purchase`);
+        if(purchase>i){
+            console.log(`i dont have enough you want ${purchase} i have ${i}`)
+            // break;
+        }
+        else if(i===0){
+            console.log(`i sold out`)
+        }
+        else {
+            console.log(i)
+        }
+        }
+        while (i >= 5) ;
 
 }
-console.log(iceCream());
+iceCream();
