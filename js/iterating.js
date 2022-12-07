@@ -52,23 +52,23 @@
 //      *  > last([1, 2, 3, 4, 5]) // return 5
 //      */
 //
-//     let x=[1, 2, 3, 4, 5]
-//
-//     function first(x){
-//
-// return (x[0])
-//     }
-//     function second(x){
-//
-// return (x[1])
-//     }
-//     function third(x){
-//
-// return (x[x.length-1])
-//     }
-//    console.log (first(x))
-//     console.log (second(x))
-//     console.log (third(x))
+    let x=[1, 2, 3, 4, 5]
+
+    function first(x){
+
+return (x[0])
+    }
+    function second(x){
+
+return (x[1])
+    }
+    function third(x){
+
+return (x[x.length-1])
+    }
+   console.log (first(x))
+    console.log (second(x))
+    console.log (third(x))
 
 
 

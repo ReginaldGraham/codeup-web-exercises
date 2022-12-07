@@ -1,4 +1,4 @@
-
+//
 // while(true){
 //     let userNum= prompt("Enter an odd number between 1 and 50");
 //     userNum=parseFloat(userNum);
