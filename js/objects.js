@@ -43,9 +43,6 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-    // 1.if 200> get 12% off
-    // 2.console.log each: personsName,amount before discount, discount, amount after discount
-    // 2.A maybe store in Array?
 let newPrice;
 let discount= [];
 let discountAmount;
@@ -65,7 +62,7 @@ let discountAmount;
              }
                  else {
                      shopper.discountAmount=0
-                    shopper.newPrice=shoppers.amount
+                    shopper.newPrice=shoppers[0].amount
                      console.log( shopper.amount)
 
                  }
@@ -73,19 +70,6 @@ let discountAmount;
 
     });
         console.log(shoppers)
-
-
-    // else {
-    //     console.log( shoppers.amount)
-    // }
-
-
-    // else
-    //     {
-    //
-    //     };
-    // };
-
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -100,6 +84,33 @@ let discountAmount;
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+let book1={}
+book1.title=`hobbit`
+book1.author={}
+book1.author.firstName=`Reginald`
+book1.author.lastName=`Graham`
+let book2={}
+book2.title=`apple`
+book2.author={}
+book2.author.firstName=`John`
+book2.author.lastName=`carey`
+let book3={}
+book3.title=`hamlet`
+book3.author={}
+book3.author.firstName=`sarah`
+book3.author.lastName=`louis`
+let book4={}
+book4.title=`odessy`
+book4.author={}
+book4.author.firstName=`sandy`
+book4.author.lastName=`cheeks`
+let book5={}
+book5.title=`Troy`
+book5.author={}
+book5.author.firstName=`tom`
+book5.author.lastName=`mclane`
+let books=[book1,book2,book3,book4,book5];
+console.log(books[4].author.firstName)
 
     /**
      * TODO:
@@ -125,6 +136,11 @@ let discountAmount;
      *      ---
      *      ...
      */
+    for(let i=0;i<books.length;i+=1){
+     console.log(`title: ${books[i].title}`)
+        console.log(`Author is: ${books[i].author.firstName} ${books[i].author.lastName}` )
+
+    }
 
     /**
      * Bonus:
@@ -132,9 +148,25 @@ let discountAmount;
      *   name and returns a book object with the properties described
      *   previously. Refactor your code that creates the books array to instead
      *   use your function.
+
+
+
      * - Create a function named `showBookInfo` that accepts a book object and
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    let bookCreated={}
+    function createBook(title,name){
+        bookCreated.title=title
+        bookCreated.author=name
+        return bookCreated
+}
+console.log(createBook(`Troy`,`tom`))
 
+function showBookInfo(input){
+    for(let i=0;i<input.length;i+=1){
+    }
+    return input
+}
+console.log(showBookInfo(books))
 // })();
