@@ -11,11 +11,17 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    let person={}
-    person.firstName= `Reginald`
-    person.lastName=`Graham`
-    console.log(person.firstName)
-    console.log(person.lastName)
+    // let person={}
+    // person.firstName= `Reginald`
+    // person.lastName=`Graham`
+    // console.log(person.firstName)
+    // console.log(person.lastName)
+//                 //OR
+let person={
+        firstName:`Reginald`,
+        lastName: `Graham`
+}
+console.log(person.firstName)
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -25,10 +31,16 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    // person.sayHello= function() {
+    //     return `Hello from ${person.firstName} ${person.lastName}`
+    // }
+    // console.log(person.sayHello())
+            //Or
     person.sayHello= function() {
-        return `Hello from ${person.firstName} ${person.lastName}`
-    }
-    console.log(person.sayHello())
+    return `Hello from ${this.firstName} ${this.lastName}`
+}
+// console.log(`\n`)
+console.log(person.sayHello())
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -43,33 +55,42 @@
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
-let newPrice;
-let discount= [];
-let discountAmount;
-    var shoppers = [
+// let newPrice;
+// let discount= [];
+// let discountAmount;
+    let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-        shoppers.forEach(function (shopper) {
-             if(shopper.amount>200) {
-            discountAmount = shopper.amount * .12;
-            newPrice = shopper.amount - discountAmount;
-            console.log(discountAmount);
-             console.log(`this is the new price ${newPrice}`);
-            shopper.discountAmount=discountAmount
-             shopper.newPrice=newPrice
-             }
-                 else {
-                     shopper.discountAmount=0
-                    shopper.newPrice=shoppers[0].amount
-                     console.log( shopper.amount)
+//         shoppers.forEach(function (shopper) {
+//              if(shopper.amount>200) {
+//             discountAmount = shopper.amount * .12;
+//             newPrice = shopper.amount - discountAmount;
+//             console.log(discountAmount);
+//              console.log(`this is the new price ${newPrice}`);
+//             shopper.discountAmount=discountAmount
+//              shopper.newPrice=newPrice
+//              }
+//                  else {
+//                      shopper.discountAmount=0
+//                     shopper.newPrice=shoppers[0].amount
+//                      console.log( shopper.amount)
+//                  }
+//     });
+//         console.log(shoppers)
+shoppers.forEach(function(shopper){
+    if(shopper.amount > 200){
+        let savings= parseFloat(shopper.amount)*.12
+        let total=parseFloat(shopper.amount)-(savings);
+        console.log(`${shopper.name} has a bill of ${shopper.amount.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}, and received a 12% discount.\n ${shopper.name}'s discounted total is ${total.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}, with a savings of ${savings.toLocaleString('en-US', {style: 'currency', currency: 'USD'})} `)
+    }
+    else{
+        console.log(`${shopper.name} has a bill of ${shopper.amount.toLocaleString('en-US',{style: 'currency', currency: 'USD'})} and did not receive a discount.`)
 
-                 }
+    }
 
-
-    });
-        console.log(shoppers)
+})
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -84,33 +105,79 @@ let discountAmount;
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-let book1={}
-book1.title=`hobbit`
-book1.author={}
-book1.author.firstName=`Reginald`
-book1.author.lastName=`Graham`
-let book2={}
-book2.title=`apple`
-book2.author={}
-book2.author.firstName=`John`
-book2.author.lastName=`carey`
-let book3={}
-book3.title=`hamlet`
-book3.author={}
-book3.author.firstName=`sarah`
-book3.author.lastName=`louis`
-let book4={}
-book4.title=`odessy`
-book4.author={}
-book4.author.firstName=`sandy`
-book4.author.lastName=`cheeks`
-let book5={}
-book5.title=`Troy`
-book5.author={}
-book5.author.firstName=`tom`
-book5.author.lastName=`mclane`
-let books=[book1,book2,book3,book4,book5];
-console.log(books[4].author.firstName)
+// let book1={}
+// book1.title=`hobbit`
+// book1.author={}
+// book1.author.firstName=`Reginald`
+// book1.author.lastName=`Graham`
+// let book2={}
+// book2.title=`apple`
+// book2.author={}
+// book2.author.firstName=`John`
+// book2.author.lastName=`carey`
+// let book3={}
+// book3.title=`hamlet`
+// book3.author={}
+// book3.author.firstName=`sarah`
+// book3.author.lastName=`louis`
+// let book4={}
+// book4.title=`odessy`
+// book4.author={}
+// book4.author.firstName=`sandy`
+// book4.author.lastName=`cheeks`
+// let book5={}
+// book5.title=`Troy`
+// book5.author={}
+// book5.author.firstName=`tom`
+// book5.author.lastName=`mclane`
+// let books=[book1,book2,book3,book4,book5];
+// console.log(books[4].author.firstName)
+            //OR
+let books = [
+
+{
+    title:`hobbit`,
+    author:
+    {
+    firstName:`Reginald`,
+    lastName:`Graham`
+    }
+},
+{
+    title: `apple`,
+    author:
+    {
+    firstName: `John`,
+    lastName: `carey`
+    }
+},
+{
+    title: `hamlet`,
+    author:
+    {
+    firstName: `sarah`,
+    lastName: `louis`
+    }
+},
+{
+
+    title:`odessy`,
+    author:
+    {
+    firstName: `sandy`,
+    lastName: `cheeks`
+    }
+},
+{
+    title: `Troy`,
+    author:
+    {
+    firstName: `tom`,
+    lastName: `mclane`
+    }
+}
+]
+console.log(books)
 
     /**
      * TODO:
@@ -136,12 +203,23 @@ console.log(books[4].author.firstName)
      *      ---
      *      ...
      */
-    for(let i=0;i<books.length;i+=1){
-     console.log(`title: ${books[i].title}`)
-        console.log(`Author is: ${books[i].author.firstName} ${books[i].author.lastName}` )
+    // for(let i=0;i<books.length;i+=1){
+    //  console.log(`title: ${books[i].title}`)
+    //     console.log(`Author is: ${books[i].author.firstName} ${books[i].author.lastName}` )
+    //
+    // }
+                     //Using empty string variable to combine function on one console.log
+let ConsoleLog=``;
+books.forEach(function(book,index){
+    let bookNumber=index+1;
+    let fullName= `${book.author.firstName} ${book.author.lastName}`;
+    // `${book.author.firstName} ${book.author.lastName}`;
+    let message= `Book # ${bookNumber}\nTitle:${book.title}\nAuthor: ${fullName} \n---------\n`;
 
-    }
-
+    ConsoleLog+=message;
+});
+// ConsoleLog+=message
+console.log(ConsoleLog);
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -170,3 +248,24 @@ function showBookInfo(input){
 }
 console.log(showBookInfo(books))
 // })();
+// let myAuthor = `jason merrel`;
+// function createBook(title,author){
+//     let authorArray=author.split(' ')
+//     let bookObject={
+//             title:`hobbit`,
+//             author:
+//             {
+//             firstName:`Reginald`,
+//             lastName:`Graham`
+//             }
+// };
+//             return bookObject;
+// }
+//
+// console.log(createBook("park","J,R,P tolkien"))
+// let books2=[
+//     createBook(`park`,`J,R,P tolkien`),
+//     createBook(`The Fellowship of the Ring miller`),
+//     createBook(`mice`,`J,R,P tolkien`)  ,
+//     createBook(`black hawk`),
+// ];
