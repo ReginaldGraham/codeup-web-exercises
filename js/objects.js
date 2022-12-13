@@ -22,6 +22,7 @@ let person={
         lastName: `Graham`
 }
 console.log(person.firstName)
+console.log(person.lastName)
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -178,6 +179,9 @@ let books = [
 }
 ]
 console.log(books)
+console.log(books[0].title);
+console.log(books[0].author.firstName);
+console.log(books[0].author.lastName);
 
     /**
      * TODO:
