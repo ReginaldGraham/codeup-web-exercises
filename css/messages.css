@@ -7,33 +7,37 @@ body, html {
 }
 .message-info{
 background-color:#d0ddfc ;
-margin:10px ;
-border:.5px gray solid;
-border-radius: 2px;
+margin:.5em auto ;
+border:1px lightgray solid;
+border-radius: 5px;
 color: #392E94;
-padding-left: 10px;
+padding: .5em;
+width: 80%;
 }
 
 .message-success{background-color:	#d3eed9 ;
-    margin:10px;
-    border:.5px gray solid;
-    border-radius: 2px;
+    margin:.5em auto;
+    border:1px lightgray solid;
+    border-radius: 5px;
     color: 	#3A8A5B;
-    padding-left: 10px;
+    padding: .5em;
+    width: 80%;
 }
 
 .message-warning{background-color:#fcfbce ;
-    margin:10px;
-    border:.5px gray solid;
-    border-radius: 2px;
+    margin:.5em auto;
+    border:1px lightgray solid;
+    border-radius: 5px;
     color: #907E18;
-    padding-left: 10px;
+    padding: .5em;
+    width: 80%;
 }
 
 .message-error{background-color:#f4d4d7 ;
-    margin:10px;
-    border:.5px gray solid;
-    border-radius: 2px;
+    margin:.5em auto;
+    border:1px lightgray solid;
+    border-radius: 5px;
    color:#861F37;
-    padding-left: 10px;
+    padding: .5em;
+    width: 80%;
 }
