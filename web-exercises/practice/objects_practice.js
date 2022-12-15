@@ -109,6 +109,7 @@
 // console.log(`cathy`)
 // console.log(`karen`)
 // let name2=''
+"use strict";
 
 
                                                // let names = '';
@@ -189,3 +190,142 @@
 // 2. Change the names of all users to “John Doe”
 // 3. Increase the current age of all users by 1
 // Can you accomplish each step using iteration?
+//
+// ================================= WARM UP
+//
+// Create a function, findAverageDogAge, that takes in a array of pet objects with age properties and returns the average age of a dog.
+//
+//     const pets = [
+//     {
+//         name: 'Sparky',
+//         type: 'Fish',
+//         age: 4
+//     },
+//     {
+//         name: 'Mr. Pig',
+//         type: 'Cat',
+//         age: 4
+//     },
+//     {
+//         name: 'Bubba',
+//         type: 'Dog',
+//         age: 5
+//     },
+//     {
+//         name: 'Pickles',
+//         type: 'Dog',
+//         age: 10
+//     }
+//
+// ];
+
+// // findAverageDogAge(pets) // returns 7.5
+// let petTotal;
+// function easy(){
+// for (let i = 0; i < pets.length; i +=1) {
+//  petTotal+=pets.age[i];
+// return petTotal/=pets.length
+// }
+// }
+// console.log(easy())
+
+// let total=0;
+// let dogCount=0;
+// function findAverageDogAge(pets){
+//     pets.forEach((pet)=>{
+//         if(pet.type ===`Dog`){
+//             total += pet.age;
+//             dogCount++;
+//         }
+//     });
+//     return total/dogCount;
+// }
+// console.log(findAverageDogAge(pets));
+//
+// function findAverageDogAge(pets){
+// for(let i =0; i<pets.length; i+=1){
+//     if(pets[i].type ==='Dog'){
+//         total+=pets[i].age;
+//         dogCount++;
+//     }
+// }
+// return total/ dogCount
+// }
+// console.log(findAverageDogAge(pets))
+
+// Create a function, returnPetsWithNoFish, that takes in a array of pet objects and returns an array of pet objects with no pets of type 'Fish'.
+
+    const pets = [
+    {
+        name: 'Sparky',
+        type: 'Fish',
+        age: 4
+    },
+    {
+        name: 'Mr. Pig',
+        type: 'Cat',
+        age: 4
+    },
+    {
+        name: 'Bubba',
+        type: 'Dog',
+        age: 5
+    },
+    {
+        name: 'Beans',
+        type: 'Dog',
+        age: 3
+    },
+    {
+        name: 'Mr. Salmon',
+        type: 'Fish',
+        age: 1
+    }
+];
+
+let total=0;
+let noFish=[];
+function returnPetsWithNoFish(pets){
+    pets.forEach((pet)=>{
+        if(pet.type !==`Fish`){
+
+            noFish.push(pet)
+        }
+    });
+    return noFish
+}
+console.log(returnPetsWithNoFish(pets));
+
+function returnPetsWithNoFish2(pets){
+pets.forEach(function(pet){
+    if (pet.type !==`Fish`) {
+        noFish.push(pet)
+    }
+});
+return noFish
+}
+console.log(returnPetsWithNoFish2(pets))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
