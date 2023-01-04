@@ -1,0 +1,50 @@
+.btn-outline-success{
+    width: 20rem;
+    color: dodgerblue;
+    border: dodgerblue solid;
+}
+
+.jumbotron{
+    background-image: url("../img/pizza.png");
+    height: 346px;
+    background-size: cover;
+    width: 75%;
+}
+.banner{
+    position: absolute;
+    width: 68%;
+    top: 10rem;
+    right: 14.5rem;
+}
+.col-md-8{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    padding-top: 2rem;
+    margin-left: 10.1rem;
+}
+.pizza-specifications h6{
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: .65rem 0;
+
+}
+
+a:active{
+    color: black;
+}
+.list-group-item li{
+    height: 20px;
+
+}
+.nav-tabs{
+    position: absolute;
+    right: 25.15em;
+}
+
