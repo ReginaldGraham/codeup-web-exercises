@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="page-wrapper">
+    <div id="header">
+        <h1 class="codeup">hello</h1>
+    </div>
+    <div id="p-text" class="codeup">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci distinctio facilis ipsa iure necessitatibus numquam odio soluta vitae? Aliquid aspernatur blanditiis explicabo nisi sit sunt tempore totam? Dolore, iure, obcaecati.</p>
+    </div>
+    <div class="list">
+        <ul id="codeup">
+            <li>hi</li>
+            <li>hey</li>
+            <li>hello</li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+   $(".codeup ").css("border", "1px solid #f00");
+  $(`li`).css('font-size','20px')
+   $(`h1`).css(`background-color`,`yellow`)
+   $(`p`).css(`background-color`,`yellow`)
+   $(`li`).css(`background-color`,`yellow`)
+  let know=$(`h1`).html();
+  alert(know)
+   $(`h1,p,li`).css(`background-color`,`yellow`)
+   $(`h1`).html(`this is the new title`)
+</script>
+</body>
+</html>
