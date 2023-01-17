@@ -25,15 +25,38 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script>
-   $(".codeup ").css("border", "1px solid #f00");
-  $(`li`).css('font-size','20px')
-   $(`h1`).css(`background-color`,`yellow`)
-   $(`p`).css(`background-color`,`yellow`)
-   $(`li`).css(`background-color`,`yellow`)
-  let know=$(`h1`).html();
-  alert(know)
-   $(`h1,p,li`).css(`background-color`,`yellow`)
-   $(`h1`).html(`this is the new title`)
+  //  $(".codeup ").css("border", "1px solid #f00");
+  // $(`li`).css('font-size','20px')
+  //  $(`h1`).css(`background-color`,`yellow`)
+  //  $(`p`).css(`background-color`,`yellow`)
+  //  $(`li`).css(`background-color`,`yellow`)
+  // let know=$(`h1`).html();
+  // alert(know)
+  //  $(`h1,p,li`).css(`background-color`,`yellow`).css(`color`,`red`)
+  //  $(`h1`).html(`this is the new title`)
+   // $(`li`).fadeOut
+   // $(`li`).on(`click` ,function (){ let $tog = $(`li`);
+   //     $tog.toggle();});
+  //  $(document).ready(function(){
+  //      $(`li`).on(`click`, function(){
+  //          let $parentUL = $(this).parents(`ul`);
+  //          let $listItems= $parentUL.find(`li`);
+  //          $listItems.toggleClass(`red-border`);
+  //      });
+  //  });
+  $(`h1`).click(function (){
+      $(`h1`).css(`background-color`,`yellow`);
+  });
+  $(`p`).dblclick(function(){
+      $(`p`).css(`font-size`,`18px`);
+  });
+  $(`li`).hover(
+      function (){
+    $(`li`).css(`color`,`red`);
+  },
+      function (){
+    $(`li`).css(`color`,`black`);
+  });
 </script>
 </body>
 </html>
