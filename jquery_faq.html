@@ -39,6 +39,27 @@
     <dt>Q: Can I drive my RV along the Going-to-the-Sun Road?</dt>
     <dd>A: Vehicles, and vehicle combinations, longer than 21 feet (including bumpers) or wider than 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area. You may however, drive to Avalanche if traveling east, and to Sun Point, if traveling west. Vehicles over 10 feet in height may have difficulty driving west from Logan Pass due to rock overhangs. Stock trucks and trailers may access Packers Roost and Siyeh Bend.</dd>
 </dl>
+<h3>Glacier National Park</h3>
+<ul id="Glacier-national">
+    <li>13 campgrounds</li>
+    <li>1000 campsites</li>
+    <li>open 24-7</li>
+    <li>U.S./Canadian border</li>
+</ul>
+<h3>Parks of florida</h3>
+<ul id="state-parks-florida">
+    <li>everglades</li>
+    <li>gator</li>
+    <li>snakes</li>
+    <li>heat</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
 <script>
     "use strict";
 
@@ -51,9 +72,28 @@
             $(`dd`).toggleClass(`invisible`);}
     }).appendTo('body');
 
-    $(`dt`).on(`click`, function (){
-        $(this).toggleClass(`highlight`)
-    })
+    // $(`dt`).on(`click`, function (){
+    //     $(this).toggleClass(`highlight`)
+    // })
+    //
+    $(`<p>`,{
+        text: `toggle button` ,
+        href: `#`,
+        click: function (event){ event.preventDefault();
+            $(`ul li:last-child`).toggleClass(`highlight`);}
+        }).appendTo(`body`);
+
+    $(`h3`).on(`click`, function (){
+        $(this).next().children().css(`font-weight`,`bold`)
+    });
+
+    $(`li`).on(`click`, function (){
+       $(this).parent().children(`li:first-child`).css(`color`, `blue`)
+    });
+    OR
+    $(`li`).on(`click`, function (){
+        $(this).parent().children().first().css(`color`, `blue`)
+    });
 </script>
 </body>
 </html>
