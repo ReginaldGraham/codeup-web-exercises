@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+    background-color: wheat;
+}
+
+table{
+    text-align: center;
+margin-left: auto;
+    margin-right: auto;
+    background-color: #848487;
+}
+#update{
+position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+#page-wrapper{
+    background-image: url("../img/shutterstock157725224.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
