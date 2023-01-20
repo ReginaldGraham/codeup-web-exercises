@@ -31,5 +31,13 @@
     "tool"
   ],
   "price": 10
-}
+},
+  {
+    "title": "bolts",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 10
+  }
 ]

@@ -29,17 +29,17 @@
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
-    $.ajax(`../../data/inventory.json`).done(function(data){
+    $.ajax(`../../data/inventory.json`).done(function (data) {
       console.log(data);
       // $(`#products`).append(html);
     })
 
     // TODO: Take the data from inventory.json and append it to the products table
 
-    $.ajax(`../../data/inventory.json`).done(function(data){
+    $.ajax(`../../data/inventory.json`).done(function (data) {
       console.log(data);
-      let html='';
-      for (let i=0; i<data.length;i++) {
+      let html = '';
+      for (let i = 0; i < data.length; i++) {
         html += `<article>
        <tr>
 <!--       <th>Title</th>-->
@@ -54,28 +54,31 @@
       }
       $(`#insertProducts`).html(html);
     })
+
 //Add a "Refresh" button that will load inventory.json for you without having to refresh the entire page.
-    $(`#update`).click(function(){
-      $.ajax(`../../data/inventory.json`).done(function(data) {
-        console.log(data);
-        let html = '';
-        for (let i = 0; i < data.length; i++) {
-          html += `<article>
-         <tr>
-<!--       <th>Title</th>-->
-            <td> ${data[i].title}</td>
-<!--       <th>Quanity</th>-->
-            <td>${data[i].quantity}</td>
-<!--       <th>Categories</th>-->
-            <td></td>
-            <td>${data[i].categories}</td>
-</tr>
-</article>`;
-        }
-        $(`#insertProducts`).html(html);
-      })
-      });
+//     $(`#update`).click(function(){
+//       $.ajax(`../../data/inventory.json`).done(function(data) {
+//         console.log(data);
+//         let html = '';
+//         for (let i = 0; i < data.length; i++) {
+//           html += `<article>
+//          <tr>
+// <!--       <th>Title</th>-->
+//             <td> ${data[i].title}</td>
+// <!--       <th>Quanity</th>-->
+//             <td>${data[i].quantity}</td>
+// <!--       <th>Categories</th>-->
+//             <td></td>
+//             <td>${data[i].categories}</td>
+// </tr>
+// </article>`;
+//         }
+//         $(`#insertProducts`).html(html);
+//       })
+//       });
     })();
+  $(`#update`).click(function(){ location.reload(); });
+
 
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields

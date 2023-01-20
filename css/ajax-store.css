@@ -22,5 +22,19 @@ position: relative;
     background-repeat: no-repeat;
 
 }
-
+.page-wrapper{
+    background-image: url("../img/blog.webp");
+    height: 100vh;
+    background-size: cover;
+}
+#posts{
+    background-color: grey;
+    color: whitesmoke;
+    margin-bottom: 3rem;
+}
+#posts2{
+    background-color: grey;
+    color: whitesmoke;
+    margin-bottom: 3rem;
+}
 
