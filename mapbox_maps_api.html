@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="css/reset.css" rel="stylesheet">
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            flex-grow: 1;
+        }
+        header.container {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.78);
+        }
+        main.container, main.container>.row {
+            padding: 0;
+            flex-grow: 1;
+            column-gap: 0px;
+        }
+        aside.column {
+            width: 300px;
+            flex: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <header class="container">
+        <div class="row full-width">
+            <div class="column">
+                YOUR LOGO HERE
+            </div>
+            <div class="column">
+
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row full-width">
+            <aside class="column">
+<select id="view">
+    <option>5</option>
+    <option>10</option>
+    <option>20</option>
+</select>
+            </aside>
+            <div class="column">
+                <div id='map'></div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="js/keys.js"></script>
+<!--geocode-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+<!-- Mapbox JS -->
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+
+<!-- Custom JS -->
+<script>
+    let restaurants = [
+        {name: `mama luv`, address: `2427 Austin Highway, San Antonio, TX 78218`},
+        {name: `Mrs kitchen`, address:`5237 Walzem Rd, Windcrest, TX 78218` },
+        {name: `bbq station`, address: `1610 NE Interstate 410 Loop, San Antonio, TX 78209`},
+    ] ;
+
+      function viewChanger(e){
+        // e.preventDefault(); // don't submit the form, we just want to update the data
+        let selectedView = view.value;
+      if(selectedView==20){
+          console.log(20)
+          map.setZoom(20)
+
+      }
+      else if(selectedView==10){
+          console.log(10)
+          map.setZoom(10)
+          }
+      else if(selectedView==5){
+          console.log(5)
+          map.setZoom(5)
+      }
+        }
+    mapboxgl.accessToken= keys.mapbox;
+    let map = new mapboxgl.Map({
+     container: `map`,
+     style: `mapbox://styles/mapbox/streets-v9` ,
+     zoom:5,
+     center: [-98.4916, 29.4252]
+    })
+    restaurants.forEach(function(restaurants){
+    let popUp= new mapboxgl.Popup()
+        .setHTML(`${restaurants.name}`)
+
+geocode(`${restaurants.address}`, keys.mapbox).then(function(result){
+    // console.log(result);
+    map.setCenter(result);
+    // map.setZoom(10);
+    let marker= new mapboxgl.Marker()
+        .setLngLat(result)
+        .addTo(map)
+        .setPopup(popUp);
+    console.log(popUp)
+    });
+    })
+
+
+    let view = document.querySelector('#view');
+    view.addEventListener(`change`, viewChanger);
+</script>
+</body>
+</html>
