@@ -98,7 +98,7 @@ f
 geocode(`${restaurants.address}`, keys.mapbox).then(function(result){
     // console.log(result);
     map.setCenter(result);
-    // map.setZoom(10);
+    map.setZoom(10);
     let marker= new mapboxgl.Marker()
         .setLngLat(result)
         .addTo(map)
