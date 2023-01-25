@@ -4,8 +4,9 @@
     padding: 0;
 }
 header{
-   background-color:#017BFE;
+    background-color:#017BFE;
     color: #f8f9fa;
+    opacity: 90%;
 }
 body {
     font-family: 'Open Sans', sans-serif;
@@ -19,6 +20,9 @@ body {
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: url("../img/clouds.webp");
+    background-repeat: no-repeat;
+    background-size: 120em;
 }
 
 /* THE CONTAINER -- ALSO KNOWN AS A "SECTION" or "WRAPPER" -- IS A FULL WIDTH DIV THAT
@@ -57,12 +61,12 @@ body {
     margin-left: 20px
 }
 main{
-display: flex;
+    display: flex;
     flex-direction: row;
     width: 100%;
-flex-wrap: wrap;
-justify-content: space-between;
-padding: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
 }
 .city-log{
     display: flex;
@@ -81,9 +85,33 @@ padding: 0;
 
 }
 .place-search{
-   padding: 30px 0 30px 0;
+    padding: 30px 0 30px 0;
+    background-color: whitesmoke;
+    opacity: 60%;
+    margin:auto;
 }
 main.container{
     padding: 0;
 
+}
+#card{
+    width: 100%;
+    height: 20em;
+    display: flex;
+    justify-content: space-between;
+}
+.row2{
+    /*align content to the left*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    background-color:whitesmoke;
+    width: 16em;
+    height: 100%;
+    opacity: 70%;
+}
+#margin{
+    margin-left: 20px;
 }

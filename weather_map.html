@@ -12,17 +12,17 @@
   <header class="container">
     <div class="row full-width">
       <div class="column">
-        <div>Weather App</div>
+        <h2>Weather App</h2>
       </div>
       <div class="column">
-        <div class="city-log">Current city:</div>
+        <h2 id="city-log">Current city:</h2>
       </div>
     </div>
   </header>
   <div class="container place-search">
     <div class="row full-width">
       <div class="column city-search">
-        <div class="place col-3">Place</div>
+        <h4 class="place col-3">Place</h4>
         <label for="location-input"></label>
         <input id="location-input" type="text" class="col-2">
         <input type="submit" id="find-button"> &nbsp; </input>
@@ -30,76 +30,20 @@
     </div>
   </div>
   <main class="container">
-    <div class="row" id="card">
-      <div class="card" style="width: 16rem;">
-        <div class="card-header">
-          Monday
-        </div>
-        <ul class="list-group list-group-flush Weather" id="card1">
-          <li class="list-group-item card1"><re>a item</re></li>
-          <li class="list-group-item"><p>A second item</p></li>
-          <li class="list-group-item">A third item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
+    <div id="margin">
+      <div class="row" id="card">
       </div>
-        <div class="card" style="width: 16rem;">
-          <div class="card-header">
-            Tuesday
-          </div>
-          <ul class="list-group list-group-flush Weather">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-        </div>
-        <div class="card" style="width: 16rem;">
-          <div class="card-header">
-            Wednesday
-          </div>
-          <ul class="list-group list-group-flush Weather">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-        </div>
-        <div class="card" style="width: 16rem;">
-          <div class="card-header">
-            Thursday
-          </div>
-          <ul class="list-group list-group-flush Weather">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-        </div>
-        <div class="card" style="width: 16rem;">
-          <div class="card-header">
-            Friday
-          </div>
-          <ul class="list-group list-group-flush Weather">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-        </div>
     </div>
     <div id='map'> </div>
   </main>
 </div>
+<script src="js/map.js"></script>
 <script src="js/keys.js"></script>
 <!--geocode-->
 <script src="js/mapbox-geocoder-utils.js"></script>
 <!-- Mapbox JS -->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
 <!--Weather map-->
-<!--<script src="https://code.jquery.com/jquery-2.2.4.min.js"-->
-<!--        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="-->
-<!--        crossorigin="anonymous"></script>-->
-
 <!--Jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <!--bootstrap-->
@@ -113,83 +57,6 @@
     zoom:5,
     center: [-98.4916, 29.4252]
   })
-
-  //Map location function//////////////////
-  let findButton=document.querySelector(`#find-button`);
-
-
-  findButton.addEventListener(`click`, function(){
-
-    let locationInput=document.getElementById(`location-input`);
-
-    let city = document.querySelector("#location-input").value;
-
-    console.log(locationInput.value, 'this is input value')
-    geocode(locationInput.value, keys.mapbox).then(function(result){
-      map.setCenter(result);
-      map.setZoom(9);
-      new mapboxgl.Marker()
-              .setLngLat(result)
-              .addTo(map);
-    });
-    console.log(city, "this is city var")
-        let html = '';
-    $.get("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+keys.weather+"",
-            {
-              units: 'imperial'
-            }).done(function(data) {
-      for (let i = 0; i < data.list.length; i += 8) {
-        console.log(data.list[i].main.temp, 'this is data.list');
-        let temp = data.list[i];
-          console.log(data.list[i].main.temp, 'this is data.list');
-          console.log(temp)
-          console.log(data, 'this is temp');
-          html += `<div>
-    <div>${data.list[i].main.temp}</div>
-    <div>${data.list[i].main.temp}</div>
-    <div>${data.list[i].main.temp}</div>
-    </div>`;
-        // $(`card1`).html(`<td>${data.list[i].main.temp}</td>`);
-      }
-        $(`#card`).html(html);
-    }).fail(function(jqXhr, status, error) {
-      console.log(jqXhr);
-      console.log(status);
-      console.log(error);
-    });
-  });
-
-//   $.ajax(``).done(function(data){
-//     console.log(data)
-//     let html='';
-//     for (let i=0; i<data.length; i++){
-//       html += `<article>
-// <tr>
-// <td>${data.list[i].main.temp}</td>
-// <td>${data.list[i].main.temp}</td>
-// <td>${data.list[i].main.temp}</td>
-// </tr>
-// </article>`;
-//     }
-//     $(`#card`).html(html);
-//   })
-// append data.list[i].main.temp to the card class in the html.
-//   let html = '';
-//     for (let i = 0; i < data.list.length; i += 8) {
-//       console.log(data.list[i].main.temp, 'this is data.list');
-//       let temp = data.list[i];
-//       console.log(temp)
-//       console.log(data, 'this is temp');
-//       html += `<article>
-//     <tr>
-//     <td>${data.list[i].main.temp}</td>
-//     <td>${data.list[i].main.temp}</td>
-//     <td>${data.list[i].main.temp}</td>
-//     </tr>
-//     </article>`;
-//     }
-//     $(`#card`).html(html);
-//     $(`card1`).html(`<td>${data.list[i].main.temp}</td>`);
 </script>
 </body>
 </html>
