@@ -12,7 +12,7 @@ findButton.addEventListener(`click`, function(){
     geocode(locationInput.value, keys.mapbox).then(function(result){
         map.setCenter(result);
         map.setZoom(9);
-        new mapboxgl.Marker()
+        new mapboxgl.Marker({draggable: true,})
             .setLngLat(result)
             .addTo(map);
     });
