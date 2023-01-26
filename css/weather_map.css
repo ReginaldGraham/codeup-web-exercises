@@ -22,7 +22,8 @@ body {
     min-height: 100vh;
     background-image: url("../img/clouds.webp");
     background-repeat: no-repeat;
-    background-size: 120em;
+    background-size: cover;
+
 }
 
 /* THE CONTAINER -- ALSO KNOWN AS A "SECTION" or "WRAPPER" -- IS A FULL WIDTH DIV THAT
