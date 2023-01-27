@@ -1,5 +1,5 @@
 "use strict";
-//Map location function//////////////////
+//Map location function///////////////////
 let findButton=document.querySelector(`#find-button`);
 
 
