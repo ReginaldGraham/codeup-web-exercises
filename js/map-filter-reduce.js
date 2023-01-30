@@ -60,12 +60,14 @@ let longestEmail = users.reduce((longest, user)=> {
 }, "");
 
 
-let userName = users.reduce((list,name)=>{
-return `${list} ${name.name},`;
-}, "Your instructors are:").slice(0, -1) + ".";
-
-console.log(userName)
 let nameString = users.reduce((list, user) => {
     return `${list} ${user.name},`;
 } , "Your instructors are:").slice(0, -1) + ".";
 console.log(nameString);
+
+let userName = users.reduce((list,name)=>{
+    list += name.name + ", ";
+    return list;
+}, "Your instructors are: ").slice(0, -2) + ".";
+
+console.log(userName)
